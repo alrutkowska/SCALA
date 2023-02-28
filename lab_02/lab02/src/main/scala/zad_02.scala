@@ -7,7 +7,10 @@ package lab01
 */
 def obramuj(napis: String, znak: Char): String = {
   // definiujemy funkcję obramowującą
-  "AQQ"
+  val splited = napis.split("\n")
+  val max_len = splited.map(_.length).max
+  val wynik = s"${znak.toString * (max_len + 4)}\n" +
+    splited.map(x -> s"$znak ${x.padTo(max_len, ' ')")
 }
 
 @main def zad_02: Unit = {
